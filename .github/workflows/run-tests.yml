@@ -27,13 +27,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Debug: Check ts-node version
+      - name: Debug ts-node
+        run: npx ts-node --version
+
+      # Debug: Check tsconfig.json
+      - name: Debug tsconfig.json
+        run: npx ts-node --show-config
+
       # Run API tests
       - name: Run API tests
         env:
           ADDRESS: ${{ secrets.ADDRESS }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
-        run: npx mocha -r ts-node/esm 'tests/api/**/*.test.ts'
+        run: npx mocha -r ts-node/register 'tests/api/**/*.test.ts'
 
       # Run UI tests
       - name: Run UI tests
