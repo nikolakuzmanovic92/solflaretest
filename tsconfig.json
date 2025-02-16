@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "CommonJS",
+      "types": ["node", "mocha", "@wdio/mocha-framework", "@wdio/types", "expect-webdriverio"],
+      "outDir": "./build",
+      "rootDir": "./",
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*", "tests/**/*", "utils/**/*.ts", "specs/**/*.ts", "wdio.conf.ts"],
+    "exclude": ["node_modules"]
+  }
