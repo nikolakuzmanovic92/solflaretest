@@ -1,0 +1,42 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main  # Run tests when code is pushed to the main branch
+  pull_request:
+    branches:
+      - main  # Run tests when a pull request is opened against the main branch
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Use Node.js 18 (or your preferred version)
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run API tests
+      - name: Run API tests
+      env:
+          ADDRESS: ${{ secrets.ADDRESS }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+        run: npm run test:api
+
+      # Run UI tests
+      - name: Run UI tests
+      env:
+        HOME_PAGE_URL: ${{ secrets.HOME_PAGE_URL }}
+        run: npm run test:ui:headless
