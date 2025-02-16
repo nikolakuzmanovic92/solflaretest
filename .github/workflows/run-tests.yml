@@ -27,13 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Debug: Check ts-node version
-      - name: Debug ts-node
-        run: npx ts-node --version
+      # Install ts-node globally
+      - name: Install ts-node globally
+        run: npm install -g ts-node
 
-      # Debug: Check tsconfig.json
-      - name: Debug tsconfig.json
-        run: npx ts-node --show-config
+      # Debug: Check Node.js environment
+      - name: Debug Node.js environment
+        run: |
+          node -e "console.log('Node.js version:', process.version)"
+          node -e "console.log('Module type:', require('module').builtinModules.includes('module') ? 'CommonJS' : 'ESM')"
 
       # Run API tests
       - name: Run API tests
@@ -41,7 +43,7 @@ jobs:
           ADDRESS: ${{ secrets.ADDRESS }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
-        run: npx mocha -r ts-node/register 'tests/api/**/*.test.ts'
+        run: npx mocha --require ts-node/register 'tests/api/**/*.test.ts'
 
       # Run UI tests
       - name: Run UI tests
