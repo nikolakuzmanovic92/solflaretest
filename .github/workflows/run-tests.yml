@@ -3,10 +3,10 @@ name: Run Tests
 on:
   push:
     branches:
-      - main  # Run tests when code is pushed to the main branch
+      - master  # Run tests when code is pushed to the main branch
   pull_request:
     branches:
-      - main  # Run tests when a pull request is opened against the main branch
+      - master  # Run tests when a pull request is opened against the main branch
 
 jobs:
   run-tests:
@@ -29,7 +29,7 @@ jobs:
 
       # Run API tests
       - name: Run API tests
-      env:
+        env:
           ADDRESS: ${{ secrets.ADDRESS }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
@@ -37,6 +37,6 @@ jobs:
 
       # Run UI tests
       - name: Run UI tests
-      env:
-        HOME_PAGE_URL: ${{ secrets.HOME_PAGE_URL }}
+        env:
+          HOME_PAGE_URL: ${{ secrets.HOME_PAGE_URL }}
         run: npm run test:ui:headless
