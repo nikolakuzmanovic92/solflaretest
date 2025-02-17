@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import ApiHelper from '../../src/api/helpers/apiHelper';
+import ApiHelper from '../../src/api/helpers/apiHelper.js';
 
 describe('Devnet Token Validation', () => {
   it('should return multiple tokens with valid properties for devnet', async () => {

@@ -1,9 +1,10 @@
 {
     "name": "solflare-automation",
     "version": "1.0.0",
+    "type": "module",
     "scripts": {
 
-        "test:api": "mocha --require ts-node/register --extension ts 'tests/api/**/*.test.ts'",
+        "test:api": "mocha --loader ts-node/esm --extension ts 'tests/api/**/*.test.ts'",
     
         "test:ui:headless": "wdio wdio.conf.ts --browser=chrome", 
 

@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
       "target": "ES6",
-      "module": "CommonJS",
+      "module": "nodenext",
+      "moduleResolution": "nodenext", 
       "types": ["node", "mocha", "@wdio/mocha-framework", "@wdio/types", "expect-webdriverio"],
       "outDir": "./build",
       "rootDir": "./",

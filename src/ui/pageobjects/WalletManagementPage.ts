@@ -1,5 +1,5 @@
 import { $, $$ } from '@wdio/globals';
-import logger from '../../../tests/utils/logger';
+import logger from '../../../tests/utils/logger.js';
 
 class WalletManagementPage {
 

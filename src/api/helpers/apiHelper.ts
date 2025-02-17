@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import config from '../../../tests/config/config';
+import config from '../../../tests/config/config.js';
 
 interface Token {
   name: string | null;

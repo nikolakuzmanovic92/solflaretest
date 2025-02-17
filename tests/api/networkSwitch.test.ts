@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import ApiHelper from '../../src/api/helpers/apiHelper';
+import ApiHelper from '../../src/api/helpers/apiHelper.js';
 
 describe('Switching Between Mainnet and Devnet', () => {
   let mainnetResponse1;

@@ -1,11 +1,11 @@
 import { expect } from '@wdio/globals';
-import HomePage from '../../src/ui/pageobjects/HomePage';
-import OnboardPage from '../../src/ui/pageobjects/OnboardPage';
-import PasswordPage from '../../src/ui/pageobjects/PasswordPage';
-import RecoveryPhrasePage from '../../src/ui/pageobjects/RecoveryPhrasePage';
-import WalletCreationSuccessPage from '../../src/ui/pageobjects/WalletCreationSuccessPage';
-import WalletManagementPage from '../../src/ui/pageobjects/WalletManagementPage';
-import WelcomePage from '../../src/ui/pageobjects/WelcomePage';
+import HomePage from '../../src/ui/pageobjects/HomePage.js';
+import OnboardPage from '../../src/ui/pageobjects/OnboardPage.js';
+import PasswordPage from '../../src/ui/pageobjects/PasswordPage.js';
+import RecoveryPhrasePage from '../../src/ui/pageobjects/RecoveryPhrasePage.js';
+import WalletCreationSuccessPage from '../../src/ui/pageobjects/WalletCreationSuccessPage.js';
+import WalletManagementPage from '../../src/ui/pageobjects/WalletManagementPage.js';
+import WelcomePage from '../../src/ui/pageobjects/WelcomePage.js';
 
 
 describe('Solflare Wallet Tests', () => {

@@ -1,7 +1,7 @@
 import { $, browser } from '@wdio/globals';
-import logger from '../../../tests/utils/logger';
-import config from '../../../tests/config/config';
-import { takeScreenshot } from '../../../tests/utils/screenshot';
+import logger from '../../../tests/utils/logger.js';
+import config from '../../../tests/config/config.js';
+import { takeScreenshot } from '../../../tests/utils/screenshot.js';
 
 class WelcomePage {
 
