@@ -27,16 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Install ts-node globally
-      - name: Install ts-node globally
-        run: npm install -g ts-node
-
-      # Debug: Check Node.js environment
-      - name: Debug Node.js environment
-        run: |
-          node -e "console.log('Node.js version:', process.version)"
-          node -e "console.log('Module type:', require('module').builtinModules.includes('module') ? 'CommonJS' : 'ESM')"
-
       # Run API tests
       - name: Run API tests
         env:
