@@ -33,7 +33,7 @@ jobs:
           ADDRESS: ${{ secrets.ADDRESS }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
-        run: npx mocha --loader ts-node/esm --extension ts 'tests/api/**/*.test.ts'
+        run: npx mocha --loader ./node_modules/ts-node/esm.js --extension ts 'tests/api/**/*.test.ts'
 
       # Run UI tests
       - name: Run UI tests
