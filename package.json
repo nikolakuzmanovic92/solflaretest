@@ -3,23 +3,17 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-
-        "test:api": "mocha --loader ts-node/esm --extension ts 'tests/api/**/*.test.ts'",
-    
-        "test:ui:headless": "wdio wdio.conf.ts --browser=chrome", 
-
+        "test:api": "mocha",
+        "test:ui:headless": "wdio wdio.conf.ts --browser=chrome",
         "test:ui:headless:firefox": "wdio wdio.conf.ts --browser=firefox",
-
         "test:ui": "wdio wdio.conf.ts --browser=chrome --headed",
-    
         "test:ui:firefox": "wdio wdio.conf.ts --browser=firefox --headed",
-
         "test": "npm run test:api && npm run test:ui:headless",
-    
         "test:headed": "npm run test:api && npm run test:ui"
-      },
+    },
     "dependencies": {
         "@types/chai": "^5.0.1",
+        "@types/minimist": "^1.2.5",
         "@types/mocha": "^10.0.10",
         "@types/node": "^22.13.1",
         "@types/supertest": "^6.0.2",
@@ -37,11 +31,11 @@
         "minimist": "^1.2.8",
         "mocha": "^10.2.0",
         "supertest": "^7.0.0",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.7.3",
         "webdriverio": "^9.8.0",
-        "winston": "^3.17.0",
-        "@types/minimist": "^1.2.5"
+        "winston": "^3.17.0"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.3"
+    }
 }
