@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
 
-        "test:api": "mocha -r ts-node/register 'tests/api/**/*.test.ts'",
+        "test:api": "mocha --require ts-node/register --extension ts 'tests/api/**/*.test.ts'",
     
         "test:ui:headless": "wdio wdio.conf.ts --browser=chrome", 
 
